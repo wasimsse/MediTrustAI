@@ -1,0 +1,3 @@
+Original text: Allan Mask's email address is allan.mask@example.com, birthdate is 2021.12.25, and phone number is +358 409876541.
+Anonymized text: Allison Hill email address is <EMAIL_ADDRESS>, birthdate is <LOCATION>, and phone number is +1-210-343-3218x1960.
+De-anonymized text: Allan Mask email address is <EMAIL_ADDRESS>, birthdate is <LOCATION>, and phone number is +358 409876541.

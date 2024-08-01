@@ -1,0 +1,8 @@
+.DS_Store
+venv/
+*.pyc
+__pycache__/
+data_generation/data/*
+data_anonymization/anonymized_data/*
+text_summarization/summaries/*
+conversation_component/conversation_data/*
