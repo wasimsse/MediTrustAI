@@ -46,11 +46,11 @@ def summarize_text(text, detail_level="high", format_structure="bullet_points", 
         clean_summary = '. '.join(non_redundant_sentences)
 
         # Ensure important details are included
-        if include_medications and "medications" not in clean_summary.lower():
+        if include_medications and "medications" not in text.lower() and "medication" not in text.lower():
             clean_summary += "\n- Include medications details."
-        if include_allergies and "allergies" not in clean_summary.lower():
+        if include_allergies and "allergies" not in text.lower() and "allergy" not in text.lower():
             clean_summary += "\n- Include allergy details."
-        if include_lab_results and "lab results" not in clean_summary.lower():
+        if include_lab_results and "lab results" not in text.lower() and "lab result" not in text.lower():
             clean_summary += "\n- Include lab results details."
 
         # Format the summary
@@ -68,9 +68,9 @@ def verify_summary_accuracy(original_text, summary_text):
         summary_embedding = sbert_model.encode([summary_text])
         similarity = cosine_similarity(original_embedding, summary_embedding)[0][0]
 
-        # Determine relevance and consistency
-        relevance = similarity > 0.5  # Considered relevant if similarity is above 0.5
-        consistency = similarity > 0.7  # Considered consistent if similarity is above 0.7
+        # Define relevance and consistency thresholds
+        relevance = similarity > 0.5
+        consistency = similarity > 0.7
 
         # Validity check based on predefined criteria
         is_valid = relevance and consistency

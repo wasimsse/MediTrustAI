@@ -1,0 +1,23 @@
+text,output,flag,username,timestamp
+"example_data = ""Allan Mask's email address is allan.mask@example.com, birthdate is 2021-12-25, and phone number is +358 409876541.""
+","example_data = ""Allison Hill email address is <EMAIL_ADDRESS>, birthdate is <DATE_TIME>, and phone number is +1-210-343-3218x1960.""
+",,,2024-08-05 04:24:58.483615
+"example_data = ""Allison Hill email address is <EMAIL_ADDRESS>, birthdate is <DATE_TIME>, and phone number is +1-210-343-3218x1960.""","Translated: example_data = ""Allison Hill email address is <EMAIL_ADDRESS>, birthdate is <DATE_TIME>, and phone number is +1-210-343-3218x1960.""",,,2024-08-05 04:25:42.501421
+"Explanation:
+Imports:
+
+MarianMTModel and MarianTokenizer from transformers are imported to handle the translation.
+Initialization:
+
+The model and tokenizer are initialized with the Helsinki-NLP/opus-mt-en-fi model, which is designed for English to Finnish translation.
+translate_text Function:
+
+This function takes an input text string in English and returns the translated text string in Finnish.
+The text is tokenized, translated using the model, and then decoded back into a readable string.
+Example Usage:
+
+The script includes an example usage section that demonstrates how to translate a sample text when the script is run directly.
+Additional Considerations:
+Dependencies:
+Ensure that transformers and torch libraries are installed.
+Install sentencepiece as it is required by the MarianTokenizer.","Selitys: Tuonti: MarianMTModel ja MarianTokenizer muuntajista tuodaan käsittelemään käännöstä. Alustus: Malli ja sulautin alustetaan Helsinki-NLP/opus-mt-fi-mallilla, joka on suunniteltu englanniksi ja suomeksi. Translate_text Function: Tämä toiminto vie tekstijonon englanniksi ja palauttaa suomenkielisen käännetyn tekstijonon. Teksti kuitataan, käännetään mallin avulla ja puretaan sitten luettavaksi. Esimerkki: Käsikirjoitus sisältää esimerkillisen käyttöosion, joka osoittaa, miten näyteteksti käännetään, kun kirjoitus suoritetaan suoraan. Lisähuomautukset: Riippuvuus: Varmista, että muuntajat ja soihtukirjastot asennetaan. Asenna lauseosa MarianTokenizerin edellyttämällä tavalla.",,,2024-08-05 04:54:25.006775
