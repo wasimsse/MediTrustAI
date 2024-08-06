@@ -1,0 +1,218 @@
+# Format: Condition | Age Group Probabilities | Gender
+# Age groups: N (Neonates), I (Infants), T (Toddlers and Preschoolers), S (School-Age Children), A (Adolescents), D (Adults), E (Elderly)
+# Probabilities: 0 (Never), 1 (Rare), 2 (Uncommon), 3 (Common), 4 (Very Common)
+# Gender specificity: M (Male only), F (Female only), B (Both)
+
+Common Cold | N2,I4,T4,S4,A3,D3,E3 | B
+Influenza | N2,I3,T3,S3,A3,D3,E4 | B
+Hypertension | N0,I0,T0,S1,A2,D4,E4 | B
+Type 2 Diabetes | N0,I0,T0,S1,A2,D4,E4 | B
+Asthma | N1,I2,T4,S4,A3,D3,E2 | B
+Allergic Rhinitis | N0,I1,T3,S4,A3,D3,E2 | B
+Atopic Dermatitis | N3,I4,T3,S2,A2,D1,E1 | B
+Gastroesophageal Reflux Disease (GERD) | N2,I3,T2,S2,A2,D3,E3 | B
+Osteoarthritis | N0,I0,T0,S0,A1,D3,E4 | B
+Alzheimer's Disease | N0,I0,T0,S0,A0,D1,E4 | B
+Depression | N0,I0,T1,S2,A4,D4,E3 | B
+Anxiety Disorders | N0,I0,T1,S3,A4,D4,E3 | B
+Obesity | N0,I1,T2,S3,A3,D4,E3 | B
+Coronary Artery Disease | N0,I0,T0,S0,A1,D3,E4 | B
+Stroke | N1,I0,T0,S0,A1,D3,E4 | B
+Chronic Obstructive Pulmonary Disease (COPD) | N0,I0,T0,S0,A1,D3,E4 | B
+Urinary Tract Infection | N1,I2,T3,S3,A3,D3,E4 | B
+Osteoporosis | N0,I0,T0,S0,A1,D2,E4 | B
+Hypothyroidism | N1,I1,T1,S2,A2,D3,E3 | B
+Psoriasis | N0,I1,T2,S2,A3,D3,E2 | B
+Rheumatoid Arthritis | N0,I0,T1,S1,A2,D3,E3 | B
+Migraine | N0,I0,T1,S3,A4,D4,E2 | B
+Epilepsy | N1,I2,T2,S3,A3,D2,E2 | B
+Parkinson's Disease | N0,I0,T0,S0,A0,D2,E4 | B
+Chronic Kidney Disease | N1,I1,T1,S1,A2,D3,E4 | B
+Hepatitis B | N1,I1,T1,S2,A2,D3,E2 | B
+Hepatitis C | N0,I0,T0,S1,A2,D3,E3 | B
+HIV/AIDS | N1,I1,T1,S1,A2,D3,E2 | B
+Tuberculosis | N1,I2,T2,S2,A2,D3,E3 | B
+Malaria | N1,I2,T2,S2,A2,D2,E2 | B
+Dengue Fever | N1,I2,T2,S2,A2,D2,E2 | B
+Zika Virus | N1,I2,T2,S2,A2,D2,E1 | B
+Lyme Disease | N0,I1,T2,S3,A3,D3,E2 | B
+Celiac Disease | N0,I1,T2,S3,A3,D3,E2 | B
+Crohn's Disease | N0,I0,T1,S2,A3,D3,E2 | B
+Ulcerative Colitis | N0,I0,T1,S2,A3,D3,E2 | B
+Irritable Bowel Syndrome (IBS) | N0,I0,T1,S2,A3,D4,E3 | B
+Gastritis | N1,I1,T2,S2,A3,D4,E3 | B
+Peptic Ulcer Disease | N0,I0,T1,S2,A3,D4,E3 | B
+Gallstones | N0,I0,T0,S1,A2,D3,E3 | B
+Appendicitis | N0,I1,T2,S3,A3,D2,E1 | B
+Diverticulitis | N0,I0,T0,S0,A1,D3,E4 | B
+Hemorrhoids | N0,I0,T0,S1,A2,D4,E3 | B
+Gastroenteritis | N2,I4,T4,S3,A3,D3,E3 | B
+Constipation | N2,I3,T3,S3,A2,D3,E4 | B
+Pneumonia | N2,I3,T3,S2,A2,D2,E4 | B
+Bronchitis | N1,I2,T3,S3,A3,D3,E3 | B
+Sinusitis | N0,I1,T2,S3,A3,D3,E2 | B
+Tonsillitis | N0,I2,T3,S4,A3,D2,E1 | B
+Otitis Media | N1,I4,T4,S3,A2,D1,E1 | B
+Conjunctivitis | N2,I3,T3,S3,A2,D2,E2 | B
+Glaucoma | N1,I1,T1,S1,A1,D3,E4 | B
+Cataracts | N0,I0,T0,S0,A1,D2,E4 | B
+Macular Degeneration | N0,I0,T0,S0,A0,D2,E4 | B
+Myopia | N0,I1,T2,S4,A4,D3,E2 | B
+Hyperopia | N1,I1,T2,S3,A2,D2,E3 | B
+Astigmatism | N1,I1,T2,S3,A3,D3,E3 | B
+Amblyopia | N0,I2,T3,S2,A1,D1,E0 | B
+Strabismus | N1,I2,T3,S2,A1,D1,E1 | B
+Acne Vulgaris | N0,I0,T1,S3,A4,D2,E0 | B
+Atopic Dermatitis | N3,I4,T3,S2,A2,D1,E1 | B
+Contact Dermatitis | N1,I2,T3,S3,A3,D3,E2 | B
+Seborrheic Dermatitis | N3,I2,T2,S2,A2,D3,E3 | B
+Rosacea | N0,I0,T0,S0,A1,D3,E3 | B
+Vitiligo | N0,I1,T2,S2,A2,D2,E2 | B
+Alopecia Areata | N0,I1,T2,S2,A3,D3,E2 | B
+Urticaria | N1,I2,T2,S2,A2,D3,E2 | B
+Scabies | N1,I2,T3,S3,A2,D2,E2 | B
+Impetigo | N1,I3,T3,S3,A2,D1,E1 | B
+Cellulitis | N1,I2,T2,S2,A2,D3,E3 | B
+Pressure Ulcers | N1,I0,T0,S0,A1,D2,E4 | B
+Venous Leg Ulcers | N0,I0,T0,S0,A0,D2,E4 | B
+Diabetic Foot Ulcers | N0,I0,T0,S0,A1,D3,E4 | B
+Oral Thrush | N3,I3,T2,S1,A1,D1,E2 | B
+Gingivitis | N0,I1,T2,S3,A3,D4,E3 | B
+Periodontitis | N0,I0,T0,S1,A2,D3,E4 | B
+Dental Caries | N0,I2,T4,S4,A3,D3,E3 | B
+Temporomandibular Joint Disorders | N0,I0,T0,S1,A2,D3,E2 | B
+Bruxism | N0,I0,T1,S2,A3,D3,E2 | B
+Anemia | N2,I3,T3,S3,A3,D3,E3 | B
+Leukemia | N1,I2,T2,S2,A2,D2,E2 | B
+Lymphoma | N0,I1,T1,S2,A2,D3,E3 | B
+Multiple Myeloma | N0,I0,T0,S0,A0,D2,E3 | B
+Hemophilia | N2,I2,T2,S2,A2,D2,E1 | B
+Sickle Cell Disease | N2,I2,T2,S2,A2,D2,E1 | B
+Thalassemia | N2,I2,T2,S2,A2,D2,E1 | B
+Deep Vein Thrombosis | N0,I0,T0,S1,A2,D3,E4 | B
+Pulmonary Embolism | N0,I0,T0,S0,A1,D3,E4 | B
+Varicose Veins | N0,I0,T0,S0,A1,D3,E4 | B
+Raynaud's Disease | N0,I0,T0,S1,A2,D3,E3 | B
+Buerger's Disease | N0,I0,T0,S0,A1,D2,E1 | B
+Peripheral Artery Disease | N0,I0,T0,S0,A0,D3,E4 | B
+Kawasaki Disease | N0,I3,T2,S1,A0,D0,E0 | B
+Marfan Syndrome | N1,I1,T2,S2,A2,D2,E1 | B
+Ehlers-Danlos Syndrome | N1,I2,T2,S2,A2,D2,E1 | B
+Down Syndrome | N4,I4,T4,S4,A4,D4,E3 | B
+Turner Syndrome | N1,I1,T1,S1,A1,D1,E1 | F
+Klinefelter Syndrome | N1,I1,T1,S1,A1,D1,E1 | M
+Cystic Fibrosis | N2,I2,T2,S2,A2,D2,E1 | B
+Duchenne Muscular Dystrophy | N1,I2,T2,S2,A2,D1,E0 | M
+Spinal Muscular Atrophy | N2,I2,T2,S2,A1,D1,E1 | B
+Fragile X Syndrome | N1,I2,T2,S2,A2,D2,E1 | B
+Phenylketonuria | N4,I4,T4,S4,A4,D4,E3 | B
+Scoliosis | N0,I0,T1,S3,A3,D2,E2 | B
+Cerebral Palsy | N2,I2,T2,S2,A2,D2,E1 | B
+Autism Spectrum Disorder | N0,I1,T3,S3,A3,D2,E1 | B
+Attention Deficit Hyperactivity Disorder (ADHD) | N0,I0,T2,S4,A3,D2,E1 | B
+Tourette Syndrome | N0,I0,T1,S3,A2,D1,E0 | B
+Schizophrenia | N0,I0,T0,S0,A2,D3,E2 | B
+Bipolar Disorder | N0,I0,T0,S1,A3,D3,E2 | B
+Obsessive-Compulsive Disorder (OCD) | N0,I0,T1,S2,A3,D3,E2 | B
+Post-Traumatic Stress Disorder (PTSD) | N0,I0,T1,S2,A3,D3,E2 | B
+Eating Disorders | N0,I0,T0,S2,A4,D3,E1 | B
+Substance Use Disorders | N0,I0,T0,S1,A3,D4,E2 | B
+Gambling Addiction | N0,I0,T0,S0,A2,D3,E2 | B
+Internet Addiction | N0,I0,T0,S2,A4,D3,E1 | B
+Insomnia | N0,I1,T2,S2,A3,D4,E4 | B
+Sleep Apnea | N1,I1,T1,S2,A2,D3,E4 | B
+Narcolepsy | N0,I0,T0,S1,A2,D2,E1 | B
+Restless Legs Syndrome | N0,I0,T0,S1,A2,D3,E3 | B
+Menopause | N0,I0,T0,S0,A0,D4,E2 | F
+Polycystic Ovary Syndrome (PCOS) | N0,I0,T0,S0,A3,D3,E1 | F
+Endometriosis | N0,I0,T0,S0,A3,D3,E1 | F
+Uterine Fibroids | N0,I0,T0,S0,A2,D3,E2 | F
+Ovarian Cysts | N0,I0,T0,S1,A3,D3,E2 | F
+Pelvic Inflammatory Disease | N0,I0,T0,S0,A3,D3,E1 | F
+Vaginitis | N0,I1,T1,S2,A3,D3,E2 | F
+Cervical Cancer | N0,I0,T0,S0,A1,D3,E2 | F
+Ovarian Cancer | N0,I0,T0,S0,A1,D3,E3 | F
+Uterine Cancer | N0,I0,T0,S0,A0,D2,E3 | F
+Breast Cancer | N0,I0,T0,S0,A1,D3,E3 | F
+Prostate Cancer | N0,I0,T0,S0,A0,D3,E4 | M
+Testicular Cancer | N0,I0,T0,S0,A2,D2,E1 | M
+Erectile Dysfunction | N0,I0,T0,S0,A1,D3,E4 | M
+Benign Prostatic Hyperplasia | N0,I0,T0,S0,A0,D3,E4 | M
+Prostatitis | N0,I0,T0,S0,A1,D3,E3 | M
+Varicocele | N0,I0,T0,S1,A3,D2,E1 | M
+Hydrocele | N2,I2,T1,S1,A1,D1,E1 | M
+Phimosis | N2,I2,T2,S2,A1,D1,E1 | M
+Balanitis | N1,I1,T1,S2,A2,D2,E2 | M
+Peyronie's Disease | N0,I0,T0,S0,A1,D2,E2 | M
+Cryptorchidism | N4,I3,T2,S1,A0,D0,E0 | M
+Hypospadias | N4,I4,T3,S2,A1,D1,E1 | M
+Gynecomastia | N1,I1,T1,S2,A3,D2,E2 | M
+Preeclampsia | N0,I0,T0,S0,A2,D3,E0 | F
+Gestational Diabetes | N0,I0,T0,S0,A2,D3,E0 | F
+Placenta Previa | N0,I0,T0,S0,A2,D3,E0 | F
+Ectopic Pregnancy | N0,I0,T0,S0,A3,D3,E0 | F
+Miscarriage | N0,I0,T0,S0,A3,D3,E0 | F
+Postpartum Depression | N0,I0,T0,S0,A3,D3,E0 | F
+Mastitis | N0,I4,T0,S0,A2,D2,E0 | F
+Sudden Infant Death Syndrome (SIDS) | N4,I3,T0,S0,A0,D0,E0 | B
+Neonatal Jaundice | N4,I2,T0,S0,A0,D0,E0 | B
+Colic | N4,I4,T1,S0,A0,D0,E0 | B
+Failure to Thrive | N3,I3,T2,S1,A1,D0,E0 | B
+Cleft Lip and Palate | N4,I4,T3,S2,A1,D1,E1 | B
+Congenital Heart Defects | N4,I4,T3,S2,A2,D1,E1 | B
+Spina Bifida | N4,I4,T3,S2,A2,D1,E1 | B
+Hydrocephalus | N3,I3,T2,S2,A1,D1,E1 | B
+Craniosynostosis | N4,I3,T2,S1,A0,D0,E0 | B
+Club Foot | N4,I3,T2,S1,A1,D1,E1 | B
+Hip Dysplasia | N4,I3,T2,S1,A1,D1,E1 | B
+Pyloric Stenosis | N3,I4,T1,S0,A0,D0,E0 | B
+Hirschsprung's Disease | N4,I3,T2,S1,A1,D1,E1 | B
+Necrotizing Enterocolitis | N4,I2,T0,S0,A0,D0,E0 | B
+Retinopathy of Prematurity | N4,I2,T1,S0,A0,D0,E0 | B
+Neonatal Sepsis | N4,I3,T1,S0,A0,D0,E0 | B
+Respiratory Distress Syndrome | N4,I2,T1,S0,A0,D0,E0 | B
+Bronchopulmonary Dysplasia | N4,I3,T2,S1,A1,D1,E1 | B
+Infantile Hemangioma | N2,I4,T3,S2,A1,D1,E1 | B
+Wilms Tumor | N1,I2,T3,S2,A1,D0,E0 | B
+Neuroblastoma | N2,I3,T2,S1,A1,D0,E0 | B
+Retinoblastoma | N2,I3,T2,S1,A0,D0,E0 | B
+Osteosarcoma | N0,I0,T1,S2,A3,D1,E0 | B
+Ewing Sarcoma | N0,I0,T1,S2,A3,D1,E0 | B
+Rhabdomyosarcoma | N1,I2,T2,S2,A2,D1,E0 | B
+Juvenile Idiopathic Arthritis | N0,I1,T3,S3,A2,D1,E0 | B
+Kawasaki Disease | N1,I3,T2,S1,A0,D0,E0 | B
+Henoch-Schönlein Purpura | N0,I2,T3,S2,A1,D0,E0 | B
+Duchenne Muscular Dystrophy | N1,I2,T3,S3,A2,D1,E0 | M
+Spinal Muscular Atrophy | N2,I3,T2,S2,A1,D1,E1 | B
+Rett Syndrome | N1,I2,T3,S2,A1,D1,E1 | F
+Angelman Syndrome | N1,I2,T3,S2,A2,D1,E1 | B
+Prader-Willi Syndrome | N2,I3,T3,S2,A2,D1,E1 | B
+Williams Syndrome | N2,I3,T3,S2,A2,D1,E1 | B
+Noonan Syndrome | N2,I3,T3,S2,A2,D1,E1 | B
+Neurofibromatosis | N2,I2,T2,S2,A2,D2,E2 | B
+Tuberous Sclerosis | N2,I2,T2,S2,A2,D2,E2 | B
+Sturge-Weber Syndrome | N2,I2,T2,S2,A2,D2,E2 | B
+Childhood Absence Epilepsy | N0,I1,T3,S3,A2,D1,E0 | B
+Juvenile Myoclonic Epilepsy | N0,I0,T1,S3,A3,D2,E1 | B
+Febrile Seizures | N1,I3,T3,S2,A1,D0,E0 | B
+Attention Deficit Hyperactivity Disorder (ADHD) | N0,I0,T2,S4,A3,D2,E1 | B
+Oppositional Defiant Disorder | N0,I0,T2,S3,A2,D1,E0 | B
+Conduct Disorder | N0,I0,T1,S3,A3,D1,E0 | B
+Separation Anxiety Disorder | N0,I1,T3,S3,A2,D1,E0 | B
+Selective Mutism | N0,I1,T3,S3,A2,D1,E0 | B
+Reactive Attachment Disorder | N1,I2,T2,S2,A1,D1,E0 | B
+Disinhibited Social Engagement Disorder | N1,I2,T2,S2,A1,D1,E0 | B
+Specific Learning Disorder | N0,I0,T1,S4,A3,D2,E1 | B
+Developmental Coordination Disorder | N0,I1,T3,S3,A2,D1,E1 | B
+Tourette Syndrome | N0,I0,T2,S3,A2,D1,E1 | B
+Enuresis | N0,I1,T3,S3,A1,D0,E0 | B
+Encopresis | N0,I1,T2,S2,A1,D0,E0 | B
+Pica | N0,I2,T3,S2,A1,D1,E1 | B
+Rumination Disorder | N1,I2,T2,S1,A1,D1,E1 | B
+Avoidant/Restrictive Food Intake Disorder | N1,I2,T3,S2,A2,D1,E1 | B
+Anorexia Nervosa | N0,I0,T0,S2,A4,D2,E1 | B
+Bulimia Nervosa | N0,I0,T0,S1,A4,D2,E1 | B
+Binge-Eating Disorder | N0,I0,T0,S2,A3,D3,E2 | B
+Sleep Terrors | N0,I2,T3,S2,A1,D1,E0 | B
+Sleepwalking Disorder | N0,I1,T2,S3,A2,D1,E0 | B
+Nightmare Disorder | N0,I1,T2,S3,A2,D2,E1 | B

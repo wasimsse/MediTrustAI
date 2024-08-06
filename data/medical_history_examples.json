@@ -1,0 +1,574 @@
+[
+    {
+      "PatientID": "230945-789TL",
+      "Name": "Tapio Laine",
+      "DateOfBirth": "1945-09-23",
+      "Gender": "Male",
+      "Address": "Kuusitie 8, 33100 Tampere",
+      "InitialCondition": "Persistent Cough",
+      "LongTermConditions": [
+        "Chronic Obstructive Pulmonary Disease (COPD)"
+      ],
+      "SecondaryConditions": [
+        "Osteoarthritis"
+      ],
+      "Allergies": [
+        "Penicillin"
+      ],
+      "MedicationHistory": [
+        "Salbutamol inhaler: Used as needed for occasional shortness of breath since 2020, continues to present.",
+        "Ibuprofen: Taken intermittently for joint pain since 2021, used as needed.",
+        "Omeprazole: Prescribed for acid reflux in 2019, taken for 6 months and discontinued after symptoms resolved."
+      ],
+      "Visits": [
+        {
+          "PatientID": "230945-789TL",
+          "VisitDate": "2022-03-10",
+          "VisitType": "Initial Consultation",
+          "BloodPressure": "138/85",
+          "Pulse": 78,
+          "SpO2": "94%",
+          "Temperature": 36.8,
+          "Weight": 82,
+          "Height": 175,
+          "Symptoms": "Persistent cough, shortness of breath, wheezing",
+          "Diagnosis": "Suspected COPD",
+          "MedicationPrescribed": "Salbutamol inhaler as needed",
+          "LabResults": {
+            "Spirometry": "FEV1/FVC ratio: 0.65",
+            "Chest X-ray": "Hyperinflation noted"
+          },
+          "Procedures": "Spirometry, Chest X-ray",
+          "MedicalNotes": "Mr. Laine presents with a persistent cough and breathing difficulties lasting several months. Spirometry results indicate airflow limitation consistent with COPD. Chest X-ray shows signs of hyperinflation. Initiating bronchodilator therapy with Salbutamol inhaler. Smoking cessation strongly advised and resources provided. Patient educated on proper inhaler technique. Follow-up scheduled in 4 weeks to assess response to treatment."
+        },
+        {
+          "PatientID": "230945-789TL",
+          "VisitDate": "2022-04-07",
+          "VisitType": "Follow-up",
+          "BloodPressure": "135/82",
+          "Pulse": 75,
+          "SpO2": "95%",
+          "Temperature": 36.7,
+          "Weight": 81,
+          "Height": 175,
+          "Symptoms": "Improved breathing, occasional cough, mild knee pain",
+          "Diagnosis": "COPD, mild improvement; Early Osteoarthritis",
+          "MedicationPrescribed": "Salbutamol inhaler as needed, Tiotropium 18mcg daily",
+          "LabResults": {
+            "6-minute walk test": "350 meters"
+          },
+          "Procedures": "6-minute walk test",
+          "MedicalNotes": "Mr. Laine reports improvement in respiratory symptoms. SpO2 slightly improved. Adding Tiotropium to optimize bronchodilation. Patient mentions new complaint of mild knee pain, suspect early osteoarthritis. Advised on weight management and low-impact exercises. Paracetamol recommended for knee pain as needed. Reinforced importance of medication adherence and physical activity. Discussed pulmonary rehabilitation program. Follow-up scheduled in 3 months."
+        },
+        {
+          "PatientID": "230945-789TL",
+          "VisitDate": "2022-07-15",
+          "VisitType": "Regular Check-up",
+          "BloodPressure": "132/80",
+          "Pulse": 72,
+          "SpO2": "96%",
+          "Temperature": 36.6,
+          "Weight": 80,
+          "Height": 175,
+          "Symptoms": "Stable breathing, persistent mild knee pain",
+          "Diagnosis": "COPD, stable; Osteoarthritis, knee",
+          "MedicationPrescribed": "Salbutamol inhaler as needed, Tiotropium 18mcg daily, Paracetamol 1g as needed for knee pain",
+          "LabResults": {
+            "Spirometry": "FEV1/FVC ratio: 0.67",
+            "Knee X-ray": "Mild joint space narrowing"
+          },
+          "Procedures": "Spirometry, Knee X-ray",
+          "MedicalNotes": "COPD symptoms well-controlled with current regimen. Spirometry shows slight improvement. Knee X-ray confirms early osteoarthritis. Continued advice on weight management and low-impact exercises. Maintain current COPD management. Discussed potential need for joint supplements or stronger pain management for osteoarthritis if symptoms worsen. Next follow-up in 6 months or sooner if symptoms exacerbate."
+        }
+      ]
+    },
+    {
+      "PatientID": "100672-456MV",
+      "Name": "Marja Virtanen",
+      "DateOfBirth": "1972-06-10",
+      "Gender": "Female",
+      "Address": "Koivukatu 15, 20100 Turku",
+      "InitialCondition": "Fatigue and Weight Gain",
+      "LongTermConditions": [
+        "Hypothyroidism"
+      ],
+      "SecondaryConditions": [
+        "Iron Deficiency Anemia"
+      ],
+      "Allergies": [
+        "Latex"
+      ],
+      "MedicationHistory": [
+        "Oral contraceptives: Taken from age 20 to 35 for birth control and menstrual regulation.",
+        "Fluoxetine: Prescribed for depression in 2015, taken for 18 months and gradually tapered off under medical supervision.",
+        "Ibuprofen: Used occasionally for headaches and menstrual cramps since teenage years."
+      ],
+      "Visits": [
+        {
+          "PatientID": "100672-456MV",
+          "VisitDate": "2023-01-20",
+          "VisitType": "Initial Consultation",
+          "BloodPressure": "125/80",
+          "Pulse": 68,
+          "SpO2": "99%",
+          "Temperature": 36.5,
+          "Weight": 75,
+          "Height": 165,
+          "Symptoms": "Fatigue, weight gain, cold intolerance",
+          "Diagnosis": "Suspected Hypothyroidism",
+          "MedicationPrescribed": "None",
+          "LabResults": {
+            "TSH": "8.5 mIU/L",
+            "Free T4": "0.8 ng/dL",
+            "Complete Blood Count": "Within normal limits"
+          },
+          "Procedures": "Thyroid Function Tests, Complete Blood Count",
+          "MedicalNotes": "Ms. Virtanen presents with symptoms suggestive of hypothyroidism. Thyroid function tests confirm the diagnosis. Initiating levothyroxine therapy at 50mcg daily. Patient educated on the importance of consistent medication timing and potential side effects. Noted latex allergy, updated in patient's file. Follow-up scheduled in 6 weeks with repeat thyroid function tests."
+        },
+        {
+          "PatientID": "100672-456MV",
+          "VisitDate": "2023-03-03",
+          "VisitType": "Follow-up",
+          "BloodPressure": "120/78",
+          "Pulse": 70,
+          "SpO2": "99%",
+          "Temperature": 36.6,
+          "Weight": 73,
+          "Height": 165,
+          "Symptoms": "Improved energy, slight weight loss, persistent fatigue",
+          "Diagnosis": "Hypothyroidism, improving; Suspected Iron Deficiency",
+          "MedicationPrescribed": "Levothyroxine 75mcg daily",
+          "LabResults": {
+            "TSH": "5.2 mIU/L",
+            "Free T4": "1.0 ng/dL",
+            "Ferritin": "15 ng/mL",
+            "Hemoglobin": "11.2 g/dL"
+          },
+          "Procedures": "Thyroid Function Tests, Iron Studies",
+          "MedicalNotes": "Ms. Virtanen reports improvement in some symptoms, but persistent fatigue. Thyroid function tests show progress but still not within optimal range. Increasing levothyroxine dosage to 75mcg daily. Lab results indicate iron deficiency anemia. Starting ferrous sulfate 325mg daily. Discussed potential food interactions with medication absorption. Next follow-up in 8 weeks with repeat labs."
+        },
+        {
+          "PatientID": "100672-456MV",
+          "VisitDate": "2023-04-28",
+          "VisitType": "Follow-up",
+          "BloodPressure": "118/75",
+          "Pulse": 72,
+          "SpO2": "99%",
+          "Temperature": 36.7,
+          "Weight": 70,
+          "Height": 165,
+          "Symptoms": "Resolved fatigue, stable weight, improved energy",
+          "Diagnosis": "Hypothyroidism, well-controlled; Iron Deficiency Anemia, improving",
+          "MedicationPrescribed": "Levothyroxine 100mcg daily, Ferrous sulfate 325mg daily",
+          "LabResults": {
+            "TSH": "2.8 mIU/L",
+            "Free T4": "1.2 ng/dL",
+            "Ferritin": "50 ng/mL",
+            "Hemoglobin": "12.5 g/dL"
+          },
+          "Procedures": "Thyroid Function Tests, Complete Blood Count",
+          "MedicalNotes": "Significant improvement in symptoms and lab results. Adjusting levothyroxine to 100mcg daily for optimal control. Iron levels improving with supplementation. Patient reports good medication adherence and understanding of management for both conditions. Scheduled for routine follow-up in 6 months with interim labs at 3 months. Advised to continue iron supplementation for 3 more months."
+        }
+      ]
+    },
+    {
+      "PatientID": "150290-123JP",
+      "Name": "Juhani Peltonen",
+      "DateOfBirth": "1990-02-15",
+      "Gender": "Male",
+      "Address": "Mäntytie 7, 90100 Oulu",
+      "InitialCondition": "Severe Headache",
+      "LongTermConditions": [
+        "Migraine"
+      ],
+      "SecondaryConditions": [
+        "Seasonal Allergies",
+        "Anxiety"
+      ],
+      "Allergies": [
+        "Sulfa drugs"
+      ],
+      "MedicationHistory": [
+        "Cetirizine: Taken seasonally for pollen allergies since adolescence.",
+        "Naproxen: Used occasionally for sports-related injuries in early adulthood.",
+        "Amoxicillin: Prescribed for strep throat in 2018, completed 10-day course."
+      ],
+      "Visits": [
+        {
+          "PatientID": "150290-123JP",
+          "VisitDate": "2023-05-05",
+          "VisitType": "Emergency Visit",
+          "BloodPressure": "130/85",
+          "Pulse": 88,
+          "SpO2": "98%",
+          "Temperature": 36.9,
+          "Weight": 78,
+          "Height": 180,
+          "Symptoms": "Severe headache, nausea, photophobia",
+          "Diagnosis": "Acute Migraine Attack",
+          "MedicationPrescribed": "Sumatriptan 50mg as needed, Propranolol 40mg daily for prevention",
+          "LabResults": {
+            "CBC": "Within normal limits",
+            "Electrolytes": "Normal"
+          },
+          "Procedures": "None",
+          "MedicalNotes": "Mr. Peltonen presented to ER with severe migraine symptoms. No focal neurological deficits observed. Treated with IV fluids and medications with good response. Discussed migraine triggers and importance of early intervention. Prescribed sumatriptan for future attacks and scheduled follow-up with neurology. Patient also mentioned increasing anxiety about migraines affecting work performance."
+        },
+        {
+          "PatientID": "150290-123JP",
+          "VisitDate": "2023-05-20",
+          "VisitType": "Neurology Consultation",
+          "BloodPressure": "125/80",
+          "Pulse": 72,
+          "SpO2": "99%",
+          "Temperature": 36.7,
+          "Weight": 78,
+          "Height": 180,
+          "Symptoms": "Occasional mild headaches, anxiety about migraines",
+          "Diagnosis": "Migraine without aura, Anxiety",
+          "MedicationPrescribed": "Sumatriptan 50mg as needed, Propranolol 40mg daily for prevention",
+          "LabResults": {},
+          "Procedures": "Neurological examination",
+          "MedicalNotes": "Comprehensive migraine history taken. Neurological exam normal. Started on propranolol for migraine prevention, which may also help with anxiety symptoms. Educated patient on migraine diary use and lifestyle modifications. Discussed coping strategies for anxiety related to migraines. Consider psychiatric referral if anxiety symptoms persist. Follow-up scheduled in 2 months to assess efficacy of preventive therapy."
+        },
+        {
+          "PatientID": "150290-123JP",
+          "VisitDate": "2023-07-22",
+          "VisitType": "Follow-up",
+          "BloodPressure": "120/75",
+          "Pulse": 65,
+          "SpO2": "99%",
+          "Temperature": 36.6,
+          "Weight": 77,
+          "Height": 180,
+          "Symptoms": "Reduced headache frequency, nasal congestion, sneezing",
+          "Diagnosis": "Migraine, improving with treatment; Seasonal Allergies",
+          "MedicationPrescribed": "Sumatriptan 50mg as needed, Propranolol 40mg daily, Cetirizine 10mg daily added",
+          "LabResults": {},
+          "Procedures": "Review of migraine diary",
+          "MedicalNotes": "Mr. Peltonen reports significant reduction in migraine frequency and severity. Migraine diary shows decrease from 8 to 3 episodes per month. Propranolol well-tolerated and anxiety has improved. New onset of seasonal allergy symptoms noted. Started on cetirizine for allergy relief. Encouraged continuation of current migraine management plan. Discussed potential triggers identified in diary, including possible link between allergies and headaches. Next follow-up in 3 months."
+        },
+        {
+          "PatientID": "150290-123JP",
+          "VisitDate": "2023-10-15",
+          "VisitType": "Regular Check-up",
+          "BloodPressure": "118/72",
+          "Pulse": 62,
+          "SpO2": "99%",
+          "Temperature": 36.5,
+          "Weight": 76,
+          "Height": 180,
+          "Symptoms": "Infrequent mild headaches, well-controlled allergies, persisting anxiety",
+          "Diagnosis": "Migraine (well-controlled), Seasonal Allergies, Anxiety Disorder",
+          "MedicationPrescribed": "Sumatriptan 50mg as needed, Propranolol 40mg daily, Cetirizine 10mg daily, Escitalopram 10mg daily added",
+          "LabResults": {
+            "CBC": "Normal",
+            "Thyroid Function Tests": "Normal"
+          },
+          "Procedures": "None",
+          "MedicalNotes": "Migraine management continues to be effective with current regimen. Seasonal allergies well-controlled with cetirizine. However, patient reports persistent anxiety despite improvement in migraines. After discussion, agreed to start escitalopram for anxiety management. Reviewed potential side effects and interactions. Encouraged continued use of migraine diary and stress management techniques. Follow-up in 6 weeks to assess response to escitalopram."
+        }
+      ]
+    },
+    {
+      "PatientID": "080355-789SK",
+      "Name": "Sirkka Korhonen",
+      "DateOfBirth": "1955-03-08",
+      "Gender": "Female",
+      "Address": "Rantakatu 22, 70100 Kuopio",
+      "InitialCondition": "Joint Pain and Stiffness",
+      "LongTermConditions": [
+        "Rheumatoid Arthritis"
+      ],
+      "SecondaryConditions": [
+        "Osteoporosis",
+        "Hypertension"
+      ],
+      "Allergies": [],
+      "MedicationHistory": [
+        "Calcium supplements: Taken daily since menopause in 2005 for bone health.",
+        "Estrogen therapy: Used for menopausal symptoms from 2005 to 2010, discontinued due to increased risk factors.",
+        "Paracetamol: Used occasionally for headaches and minor pains throughout adulthood."
+      ],
+      "Visits": [
+        {
+          "PatientID": "080355-789SK",
+          "VisitDate": "2022-09-10",
+          "VisitType": "Initial Rheumatology Consultation",
+          "BloodPressure": "135/85",
+          "Pulse": 76,
+          "SpO2": "98%",
+          "Temperature": 36.8,
+          "Weight": 65,
+          "Height": 162,
+          "Symptoms": "Joint pain and stiffness in hands and knees",
+          "Diagnosis": "Suspected Rheumatoid Arthritis",
+          "MedicationPrescribed": "Naproxen 500mg twice daily",
+          "LabResults": {
+            "RF": "Positive (75 IU/mL)",
+            "Anti-CCP": "Positive (>200 U/mL)",
+            "CRP": "15 mg/L",
+            "ESR": "40 mm/hr"
+          },
+          "Procedures": "Hand and feet X-rays",
+          "MedicalNotes": "Mrs. Korhonen presents with symmetrical joint pain and morning stiffness lasting >1 hour. Physical exam shows synovitis in MCPs and wrists. Lab results and imaging support diagnosis of Rheumatoid Arthritis. Initiating treatment with methotrexate 15mg weekly and folic acid supplementation. Low-dose prednisone for symptomatic relief. Educated patient on medication side effects and importance of regular monitoring. DEXA scan ordered to assess bone density due to age and new RA diagnosis. Follow-up scheduled in 6 weeks."
+        },
+        {
+          "PatientID": "080355-789SK",
+          "VisitDate": "2022-10-22",
+          "VisitType": "Follow-up",
+          "BloodPressure": "140/88",
+          "Pulse": 72,
+          "SpO2": "98%",
+          "Temperature": 36.7,
+          "Weight": 64,
+          "Height": 162,
+          "Symptoms": "Reduced joint pain, improved morning stiffness, fatigue",
+          "Diagnosis": "Rheumatoid Arthritis, responding to treatment; Osteoporosis; Hypertension",
+          "MedicationPrescribed": "Methotrexate 15mg weekly, Folic acid 5mg daily, Prednisone 5mg daily, Alendronate 70mg weekly, Calcium and Vitamin D supplements added",
+          "LabResults": {
+            "CRP": "8 mg/L",
+            "ESR": "25 mm/hr",
+            "Liver function tests": "Within normal limits",
+            "DEXA scan": "T-score: -2.7 (lumbar spine)"
+          },
+          "Procedures": "DEXA scan results review",
+          "MedicalNotes": "Patient reports improvement in RA symptoms. Joint examination shows reduced synovitis. DEXA scan reveals osteoporosis. Initiated alendronate therapy along with calcium and vitamin D supplementation. Noted elevated blood pressure, will monitor. Discussed importance of regular exercise and joint protection techniques. Continue current RA treatment. Next follow-up in 3 months with repeat labs and BP check."
+        },
+        {
+          "PatientID": "080355-789SK",
+          "VisitDate": "2023-01-15",
+          "VisitType": "Regular Check-up",
+          "BloodPressure": "150/92",
+          "Pulse": 74,
+          "SpO2": "98%",
+          "Temperature": 36.6,
+          "Weight": 66,
+          "Height": 162,
+          "Symptoms": "Well-controlled joint symptoms, no fractures, persistent high blood pressure",
+          "Diagnosis": "Rheumatoid Arthritis, well-controlled; Osteoporosis; Hypertension",
+          "MedicationPrescribed": "Methotrexate 15mg weekly, Folic acid 5mg daily, Prednisone 5mg daily, Alendronate 70mg weekly, Calcium and Vitamin D supplements, Lisinopril 10mg daily added",
+          "LabResults": {
+            "CRP": "5 mg/L",
+            "ESR": "18 mm/hr",
+            "Liver function tests": "Normal",
+            "Renal function": "Normal"
+          },
+          "Procedures": "None",
+          "MedicalNotes": "RA remains well-controlled on current regimen. No osteoporotic fractures reported. BP consistently elevated; initiated lisinopril for hypertension management. Educated on BP monitoring at home and lifestyle modifications for hypertension. Continue current RA and osteoporosis treatments. Follow-up in 2 months to assess BP control and medication tolerability."
+        }
+      ]
+    },
+    {
+      "PatientID": "200488-321EL",
+      "Name": "Eero Laaksonen",
+      "DateOfBirth": "1988-04-20",
+      "Gender": "Male",
+      "Address": "Pihlajatie 12, 15100 Lahti",
+      "InitialCondition": "Persistent Cough and Chest Tightness",
+      "LongTermConditions": [
+        "Asthma"
+      ],
+      "SecondaryConditions": [
+        "Gastroesophageal Reflux Disease (GERD)"
+      ],
+      "Allergies": [
+        "Pollen",
+        "Dust mites"
+      ],
+      "MedicationHistory": [
+        "Salbutamol inhaler: Used occasionally for exercise-induced breathlessness since teenage years.",
+        "Loratadine: Taken seasonally for pollen allergies since childhood.",
+        "Ibuprofen: Used as needed for sports-related muscle soreness since early adulthood."
+      ],
+      "Visits": [
+        {
+          "PatientID": "200488-321EL",
+          "VisitDate": "2023-03-15",
+          "VisitType": "Initial Consultation",
+          "BloodPressure": "128/78",
+          "Pulse": 82,
+          "SpO2": "97%",
+          "Temperature": 36.7,
+          "Weight": 75,
+          "Height": 178,
+          "Symptoms": "Persistent cough, chest tightness, shortness of breath with exertion",
+          "Diagnosis": "Suspected Asthma",
+          "MedicationPrescribed": "Salbutamol inhaler prescribed",
+          "LabResults": {
+            "Spirometry": "FEV1/FVC: 0.68, bronchodilator response: 15% improvement",
+            "Chest X-ray": "No acute findings"
+          },
+          "Procedures": "Spirometry, Chest X-ray",
+          "MedicalNotes": "Mr. Laaksonen presents with symptoms suggestive of asthma. Spirometry shows reversible airflow obstruction. Initiated salbutamol inhaler for symptom relief. Educated on proper inhaler technique and trigger avoidance. Allergy to pollen and dust mites noted. Peak flow meter provided for home monitoring. Follow-up scheduled in 4 weeks for treatment assessment and consideration of maintenance therapy."
+        },
+        {
+          "PatientID": "200488-321EL",
+          "VisitDate": "2023-04-12",
+          "VisitType": "Follow-up",
+          "BloodPressure": "125/75",
+          "Pulse": 76,
+          "SpO2": "98%",
+          "Temperature": 36.6,
+          "Weight": 74,
+          "Height": 178,
+          "Symptoms": "Improved breathing, occasional nocturnal symptoms, heartburn",
+          "Diagnosis": "Asthma, partially controlled; Suspected GERD",
+          "MedicationPrescribed": "Salbutamol inhaler as needed, Fluticasone/Salmeterol inhaler twice daily added",
+          "LabResults": {
+            "Peak flow readings": "Variable, 15-20% diurnal variation"
+          },
+          "Procedures": "Review of home peak flow diary",
+          "MedicalNotes": "Asthma symptoms improved but not fully controlled. Started on Fluticasone/Salmeterol inhaler for maintenance therapy. Review of peak flow diary shows variability. Patient reports new onset of heartburn, particularly at night, suspicious for GERD which may be exacerbating asthma. Advised on dietary modifications and elevation of head of bed. Will consider GERD treatment if symptoms persist. Follow-up in 8 weeks."
+        },
+        {
+          "PatientID": "200488-321EL",
+          "VisitDate": "2023-06-07",
+          "VisitType": "Follow-up",
+          "BloodPressure": "122/74",
+          "Pulse": 70,
+          "SpO2": "99%",
+          "Temperature": 36.5,
+          "Weight": 73,
+          "Height": 178,
+          "Symptoms": "Well-controlled asthma, persistent heartburn",
+          "Diagnosis": "Asthma, well-controlled; GERD",
+          "MedicationPrescribed": "Salbutamol inhaler as needed, Fluticasone/Salmeterol inhaler twice daily, Montelukast 10mg daily added, Omeprazole 20mg daily added",
+          "LabResults": {
+            "Spirometry": "FEV1/FVC: 0.78",
+            "Peak flow readings": "Consistent, <10% variability"
+          },
+          "Procedures": "Spirometry",
+          "MedicalNotes": "Asthma symptoms significantly improved with current regimen. Spirometry shows good control. Added Montelukast for additional control and potential benefit for allergic symptoms. GERD symptoms persist despite lifestyle modifications; initiated Omeprazole for acid suppression. Discussed potential link between GERD and asthma exacerbations. Encouraged continued use of peak flow meter and symptom diary. Follow-up in 3 months or sooner if symptoms worsen."
+        },
+        {
+          "PatientID": "200488-321EL",
+          "VisitDate": "2023-09-20",
+          "VisitType": "Regular Check-up",
+          "BloodPressure": "120/72",
+          "Pulse": 68,
+          "SpO2": "99%",
+          "Temperature": 36.6,
+          "Weight": 72,
+          "Height": 178,
+          "Symptoms": "Well-controlled asthma and GERD",
+          "Diagnosis": "Asthma, well-controlled; GERD, improved",
+          "MedicationPrescribed": "Salbutamol inhaler as needed, Fluticasone/Salmeterol inhaler twice daily, Montelukast 10mg daily, Omeprazole 20mg daily",
+          "LabResults": {
+            "Spirometry": "FEV1/FVC: 0.82",
+            "Peak flow readings": "Consistent, <5% variability"
+          },
+          "Procedures": "Spirometry",
+          "MedicalNotes": "Both asthma and GERD symptoms well-controlled on current regimen. Patient reports improved quality of life and exercise tolerance. Spirometry shows normal lung function. Discussed long-term management plan, including potential step-down of asthma medications if control is maintained. Reviewed action plan for asthma exacerbations. Encouraged annual flu vaccination. Continue current medications. Follow-up in 6 months with interim phone check-in."
+        }
+      ]
+    },
+    {
+      "PatientID": "310579-654KN",
+      "Name": "Kaarina Nurmi",
+      "DateOfFrth": "1979-05-31",
+      "Gender": "Female",
+      "Address": "Koivukuja 8, 02100 Espoo",
+      "InitialCondition": "Unexplained Weight Loss",
+      "LongTermConditions": [
+        "Type 1 Diabetes Mellitus"
+      ],
+      "SecondaryConditions": [
+        "Diabetic Retinopathy",
+        "Microalbuminuria"
+      ],
+      "Allergies": [
+        "Latex"
+      ],
+      "MedicationHistory": [
+        "Oral contraceptives: Taken from age 18 to 30 for birth control.",
+        "Sertraline: Prescribed for anxiety in 2015, taken for 2 years and discontinued under medical supervision.",
+        "Multivitamins: Taken regularly since 2010 for general health maintenance."
+      ],
+      "Visits": [
+        {
+          "PatientID": "310579-654KN",
+          "VisitDate": "2022-11-10",
+          "VisitType": "Initial Consultation",
+          "BloodPressure": "130/80",
+          "Pulse": 78,
+          "SpO2": "98%",
+          "Temperature": 36.7,
+          "Weight": 58,
+          "Height": 165,
+          "Symptoms": "Unexplained weight loss, increased thirst and urination",
+          "Diagnosis": "Suspected Type 1 Diabetes Mellitus",
+          "MedicationPrescribed": "None",
+          "LabResults": {
+            "Fasting Blood Glucose": "210 mg/dL",
+            "HbA1c": "10.2%",
+            "C-peptide": "Low",
+            "GAD Antibodies": "Positive"
+          },
+          "Procedures": "None",
+          "MedicalNotes": "Ms. Nurmi presents with classic symptoms of diabetes. Lab results consistent with Type 1 Diabetes. Initiated on basal-bolus insulin regimen. Provided education on blood glucose monitoring, insulin administration, and hypoglycemia management. Referred to diabetes education program. Emphasized importance of regular follow-ups and monitoring for complications. Follow-up scheduled in 2 weeks for insulin adjustment."
+        },
+        {
+          "PatientID": "310579-654KN",
+          "VisitDate": "2022-11-24",
+          "VisitType": "Follow-up",
+          "BloodPressure": "128/78",
+          "Pulse": 72,
+          "SpO2": "99%",
+          "Temperature": 36.6,
+          "Weight": 59,
+          "Height": 165,
+          "Symptoms": "Improved energy, stable blood sugars",
+          "Diagnosis": "Type 1 Diabetes Mellitus",
+          "MedicationPrescribed": "Insulin glargine 20 units at bedtime, Insulin lispro with meals",
+          "LabResults": {
+            "Blood Glucose Log": "Fasting 100-130 mg/dL, Postprandial 140-180 mg/dL"
+          },
+          "Procedures": "Review of blood glucose log",
+          "MedicalNotes": "Patient adapting well to insulin regimen. Blood glucose logs show improvement but still room for optimization. Adjusted insulin doses. Reviewed carbohydrate counting and sick-day management. Emphasized regular exercise and consistent meal timing. Scheduled ophthalmology and podiatry referrals for baseline evaluations. Follow-up in 1 month with HbA1c check."
+        },
+        {
+          "PatientID": "310579-654KN",
+          "VisitDate": "2022-12-22",
+          "VisitType": "Follow-up",
+          "BloodPressure": "135/82",
+          "Pulse": 76,
+          "SpO2": "98%",
+          "Temperature": 36.7,
+          "Weight": 60,
+          "Height": 165,
+          "Symptoms": "Well-controlled blood sugars, occasional mild hypoglycemia",
+          "Diagnosis": "Type 1 Diabetes Mellitus, Microalbuminuria",
+          "MedicationPrescribed": "Insulin glargine 22 units at bedtime, Insulin lispro with meals, Lisinopril 10mg daily added",
+          "LabResults": {
+            "HbA1c": "7.4%",
+            "Urine Albumin-to-Creatinine Ratio": "45 mg/g",
+            "Lipid Panel": "LDL: 130 mg/dL, HDL: 45 mg/dL, Triglycerides: 150 mg/dL"
+          },
+          "Procedures": "None",
+          "MedicalNotes": "Significant improvement in glycemic control. Initiated Lisinopril for microalbuminuria. Discussed importance of blood pressure control and renal protection. Started on statin therapy for cardiovascular risk reduction. Reviewed hypoglycemia prevention and management. Encouraged continued adherence to diet and exercise plan. Follow-up in 3 months with repeat labs."
+        },
+        {
+          "PatientID": "310579-654KN",
+          "VisitDate": "2023-03-15",
+          "VisitType": "Regular Check-up",
+          "BloodPressure": "122/76",
+          "Pulse": 70,
+          "SpO2": "99%",
+          "Temperature": 36.5,
+          "Weight": 62,
+          "Height": 165,
+          "Symptoms": "Well-controlled diabetes, no hypoglycemia",
+          "Diagnosis": "Type 1 Diabetes Mellitus, Microalbuminuria, Early Diabetic Retinopathy",
+          "MedicationPrescribed": "Insulin glargine 22 units at bedtime, Insulin lispro with meals, Lisinopril 10mg daily, Atorvastatin 20mg daily",
+          "LabResults": {
+            "HbA1c": "6.8%",
+            "Urine Albumin-to-Creatinine Ratio": "30 mg/g",
+            "Lipid Panel": "LDL: 85 mg/dL, HDL: 50 mg/dL, Triglycerides: 120 mg/dL"
+          },
+          "Procedures": "Dilated eye exam",
+          "MedicalNotes": "Excellent glycemic control achieved. Microalbuminuria improving with Lisinopril. Ophthalmology reports early background retinopathy; emphasized importance of continued good control. Lipid panel improved on statin therapy. Discussed long-term complication prevention and the need for regular screening. Patient handling diabetes management well. Continue current regimen. Follow-up in 4 months."
+        }
+      ]
+    }
+  ]
