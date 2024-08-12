@@ -1,0 +1,546 @@
+# Medical Data Processing Pipeline Documentation
+
+## Overview
+This pipeline processes medical visit data in two phases: First Visits and Medical History.
+
+## First Visits Processing
+
+1. Batch Prompt Creation (firstvisits_batchprompts_creation_bp5.py)
+   - Generates synthetic patient data and visit prompts
+   - Output: JSONL files with batch prompts
+
+2. Upload and Job Creation (firstvisits_upload_prompts_create_batchjobs_ub5.py)
+   - Uploads prompts to OpenAI and creates batch jobs
+   - Output: Log files and moved input files
+
+3. Job Status Check and Result Retrieval (firstvisits_check_and_retrieve_jobs_c5.py)
+   - Monitors job status and downloads completed results
+   - Output: Updated logs and result files
+
+4. JSONL to CSV Formatting (firstvisits_format_jsonl_to_csv_f5.py)
+   - Converts JSONL results to structured CSV format
+   - Output: Individual CSV files for each batch
+
+5. CSV Appending (firstvisits_appender_a5.py)
+   - Combines all CSV files into a single dataset
+   - Output: Consolidated CSV file with all patient visit data
+
+## Medical History Processing
+
+1. Batch Prompt Creation (medical_history_batchprompts_creation_mbp5.py)
+   - Generates prompts for comprehensive medical histories
+   - Output: JSONL files with history prompts
+
+2. Upload and Job Creation (medical_history_upload_batchjobs_mub5.py)
+   - Uploads history prompts and creates OpenAI batch jobs
+   - Output: Log files and moved input files
+
+3. Job Status Check and Result Retrieval (medical_history_check_retrieve_results_mc5.py)
+   - Monitors history job status and retrieves results
+   - Output: Updated logs and downloaded result files
+
+4. Auto-formatting (medical_history_autoformatter_af5.py)
+   - Formats JSONL history results into structured CSV files
+   - Output: Individual patient CSV files and error logs
+
+5. CSV Appending (medical_history_appender_ma5.py)
+   - Consolidates all patient history CSV files
+   - Output: Single comprehensive CSV dataset
+
+## Key Points
+- All scripts require Python 3.7+ and specific libraries
+- OpenAI API key needed for upload and retrieval scripts
+- File paths must be updated in each script to match local setup
+- Error handling and logging implemented throughout
+- Progress tracking (tqdm) used in several scripts
+- Some scripts use JSON schemas for data consistency
+- Performance considerations for large datasets mentioned
+
+## Execution Order
+1. Run First Visits scripts (1-5) in order
+2. Use output from step 5 as input for Medical History scripts
+3. Run Medical History scripts (1-5) in order
+
+Note: Ensure all prerequisites are met and file paths are correctly set before running each script.
+
+
+# Comprehensive Documentation for First Visits Scripts
+
+## 1. firstvisits_batchprompts_creation_bp5.py
+
+### Purpose
+This script generates batch prompts for creating synthetic medical visit records. It's designed to produce a large volume of realistic patient data for testing or development purposes.
+
+### How to Run
+python firstvisits_batchprompts_creation_bp5.py
+
+### Prerequisites
+- Python 3.7+
+- Required libraries: json, random, faker, datetime, numpy
+
+### Main Parameters and Variables
+- `num_files`: Number of batch files to create (default: 20)
+- `num_records`: Number of records per file (default: 1000)
+- `conditions_filepath`: Path to the medical conditions file
+- `output_directory`: Directory to save the generated batch prompts
+
+### Detailed Workflow
+1. Loads medical conditions from the specified file (`conditions_filepath`)
+2. Uses Faker library to generate synthetic patient data (names, addresses, etc.)
+3. Selects age groups and conditions based on predefined probabilities
+4. Creates detailed prompts for each patient, including:
+   - Patient information (ID, name, age, address)
+   - Initial condition
+   - Visit details (date, type, vital signs, symptoms, diagnosis)
+5. Generates JSON-formatted prompts for each patient
+6. Saves the prompts in JSONL format, with each file containing `num_records` prompts
+
+### Filepath Changes Needed
+- Update `conditions_filepath` to point to your medical conditions file:
+  conditions_filepath = r'C:\path\to\your\medical_conditions.txt'
+- Update `output_directory` to your desired output location:
+  output_directory = r'C:\path\to\your\output\directory'
+
+### Output
+- Multiple JSONL files in the specified output directory, named like `batch_prompts_YYYYMMDD_HHMMSS.jsonl`
+
+### Additional Notes
+- The script uses a Finnish locale for generating names and addresses. Modify the `Faker('fi_FI')` line if you need a different locale.
+- Adjust the `weights` list in the `select_age_group` function to change the age distribution of generated patients.
+
+## 2. firstvisits_upload_prompts_create_batchjobs_ub5.py
+
+### Purpose
+This script uploads the generated batch prompts to OpenAI and creates batch jobs for processing. It handles the API interaction and job creation process.
+
+### How to Run
+python firstvisits_upload_prompts_create_batchjobs_ub5.py
+
+### Prerequisites
+- Python 3.7+
+- Required libraries: os, json, time, datetime, openai, tkinter
+
+### Main Parameters and Variables
+- `api_key`: Your OpenAI API key (replace with your actual key)
+- `INPUT_DIR`: Directory containing the batch prompt files
+- `OUTPUT_DIR`: Directory to save the output files and logs
+
+### Detailed Workflow
+1. Initializes the OpenAI client with the provided API key
+2. Opens a file dialog for the user to select JSONL files to process
+3. For each selected file:
+   a. Creates an output directory for the job
+   b. Uploads the file to OpenAI
+   c. Creates a batch job for the uploaded file
+   d. Logs the process details (job ID, status, etc.)
+   e. Moves the input file to the output directory
+4. Handles errors and updates log files accordingly
+
+### Filepath Changes Needed
+- Update `INPUT_DIR` to your directory containing batch prompt files:
+  INPUT_DIR = r'C:\path\to\your\input\directory'
+- Update `OUTPUT_DIR` to your desired output location:
+  OUTPUT_DIR = r'C:\path\to\your\output\directory'
+
+### Output
+- Log files for each processed batch in the output directory
+- Moved input files to individual subdirectories in the output directory
+
+### Additional Notes
+- Ensure your OpenAI API key has the necessary permissions for batch processing
+- The script uses a GUI file dialog, so it needs to be run in an environment that supports GUI interactions
+
+### Error Handling
+- The script includes error handling for API interactions and file operations
+- Failed jobs are logged with error messages for troubleshooting
+
+## 3. firstvisits_check_and_retrieve_jobs_c5.py
+
+### Purpose
+This script checks the status of previously created batch jobs and retrieves results for completed jobs. It provides monitoring and result collection functionality.
+
+### How to Run
+python firstvisits_check_and_retrieve_jobs_c5.py
+
+### Prerequisites
+- Python 3.7+
+- Required libraries: os, json, openai, glob, datetime
+
+### Main Parameters and Variables
+- `api_key`: Your OpenAI API key (replace with your actual key)
+- `OUTPUT_DIR`: Directory containing the batch job logs and where results will be saved
+
+### Detailed Workflow
+1. Initializes the OpenAI client with the provided API key
+2. Scans the `OUTPUT_DIR` for all job log files
+3. For each job:
+   a. Checks the current status of the job with OpenAI
+   b. For completed jobs, downloads the results
+   c. Updates the job log with the latest status and result information
+4. Calculates and displays summary statistics:
+   - Number of jobs in each status (in progress, completed, failed, etc.)
+   - Token usage and estimated cost for completed jobs
+
+### Filepath Changes Needed
+- Update `OUTPUT_DIR` to your directory containing job logs:
+  OUTPUT_DIR = r'C:\path\to\your\output\directory'
+
+### Output
+- Updated log files for each job in their respective subdirectories
+- Downloaded result files for completed jobs
+- Console output with job status summary and token usage statistics
+
+### Additional Notes
+- The script can be run multiple times to check for updates on ongoing jobs
+- It's designed to handle large numbers of jobs efficiently
+
+### Error Handling
+- Includes error handling for API interactions and file operations
+- Logs errors for individual jobs without stopping the entire process
+
+## 4. firstvisits_format_jsonl_to_csv_f5.py
+
+### Purpose
+This script formats the retrieved JSONL results from OpenAI batch jobs into CSV files. It processes the raw output and structures it into a more usable format for analysis or further processing.
+
+### How to Run
+python firstvisits_format_jsonl_to_csv_f5.py
+
+### Prerequisites
+- Python 3.7+
+- Required libraries: os, json, csv, glob, re, datetime
+
+### Main Parameters and Variables
+- `INPUT_DIR`: Directory containing the batch job results (JSONL files)
+- `OUTPUT_DIR`: Directory to save the formatted CSV files
+- `COMPLETE_DIR`: Subdirectory within OUTPUT_DIR for completed CSV files
+- `TRACKING_FILE`: JSON file to track processing progress
+
+### Detailed Workflow
+1. Scans the `INPUT_DIR` for subdirectories containing batch job results
+2. For each subdirectory:
+   a. Identifies the batch_prompts and results JSONL files
+   b. Extracts patient information and medical reports from the JSONL files
+   c. Parses the content to structure the data (e.g., separating lab results, medical notes)
+   d. Converts the structured data to CSV format
+   e. Saves individual CSV files for each batch in `COMPLETE_DIR`
+3. Updates the tracking file to mark processed batches
+4. Handles any errors during processing and logs them
+
+### Filepath Changes Needed
+- Update `INPUT_DIR`, `OUTPUT_DIR`, and `COMPLETE_DIR`:
+  INPUT_DIR = r'C:\path\to\your\input\directory'
+  OUTPUT_DIR = r'C:\path\to\your\output\directory'
+  COMPLETE_DIR = os.path.join(OUTPUT_DIR, 'complete')
+- Update `TRACKING_FILE` path if needed:
+  TRACKING_FILE = os.path.join(OUTPUT_DIR, 'format_tracking_log.json')
+
+### Output
+- CSV files in the `COMPLETE_DIR`, named like `dataset_batch_prompts_YYYYMMDD_HHMMSS.csv`
+- Updated tracking file (`format_tracking_log.json`) in the `OUTPUT_DIR`
+
+### Additional Notes
+- The script includes functions to parse complex data structures like lab results
+- It's designed to handle large volumes of data efficiently
+
+### Error Handling
+- Errors during processing are logged in the tracking file
+- The script continues processing other files even if one file fails
+
+## 5. firstvisits_appender_a5.py
+
+### Purpose
+This script appends all the formatted CSV files into a single comprehensive dataset. It's the final step in the data processing pipeline, consolidating all patient visit data.
+
+### How to Run
+python firstvisits_appender_a5.py
+
+### Prerequisites
+- Python 3.7+
+- Required libraries: os, csv, glob, json, datetime
+
+### Main Parameters and Variables
+- `COMPLETE_DIR`: Directory containing the formatted CSV files
+- `APPENDED_DIR`: Directory to save the appended dataset
+- `TRACKING_FILE`: JSON file to track which CSV files have been processed
+
+### Detailed Workflow
+1. Scans the `COMPLETE_DIR` for all CSV files
+2. Loads the tracking file to identify which CSV files are new or unprocessed
+3. For each unprocessed CSV file:
+   a. Reads the content of the file
+   b. Appends the data to a master dataset
+4. Saves the appended dataset as a single CSV file with a timestamp
+5. Updates the tracking file to mark newly processed CSV files
+
+### Filepath Changes Needed
+- Update `COMPLETE_DIR` and `APPENDED_DIR`:
+  COMPLETE_DIR = r'C:\path\to\your\complete\directory'
+  APPENDED_DIR = r'C:\path\to\your\appended\directory'
+- Update `TRACKING_FILE` path if needed:
+  TRACKING_FILE = os.path.join(APPENDED_DIR, 'append_tracking_log.json')
+
+### Output
+- A single CSV file in the `APPENDED_DIR`, named like `dataset_appended_YYYYMMDD_HHMMSS.csv`
+- Updated tracking file (`append_tracking_log.json`) in the `APPENDED_DIR`
+
+### Additional Notes
+- The script is designed to be run multiple times, only processing new files each time
+- It maintains the structure of the input CSV files in the final appended dataset
+
+### Error Handling
+- The script logs any errors encountered during the appending process
+- It continues processing other files even if one file causes an error
+
+### Performance Considerations
+- For very large datasets, consider implementing batch processing or using a database for better performance
+
+# Comprehensive Documentation for Medical History Scripts
+
+## 1. medical_history_batchprompts_creation_mbp5.py
+
+### Purpose
+This script generates batch prompts for creating comprehensive medical histories based on initial patient visits. It expands on the first visit data to create a more detailed medical background for each patient.
+
+### How to Run
+python medical_history_batchprompts_creation_mbp5.py
+
+### Prerequisites
+- Python 3.7+
+- Required libraries: os, json, random, faker, datetime, csv, tiktoken, uuid, tqdm, pandas, outlines
+
+### Main Parameters and Variables
+- `INPUT_FILE`: Path to the CSV file containing first visit data
+- `OUTPUT_DIR`: Directory to save the generated batch prompts
+- `DATA_DIR`: Directory containing additional data files (e.g., example medical histories)
+- `LOG_FILE`: File to track processed patients
+- `num_files`: Number of batch files to create (default: 1)
+- `num_records`: Number of records per file (default: 200)
+
+### Detailed Workflow
+1. Loads patient data from the input CSV file
+2. Loads example medical histories for reference
+3. For each patient:
+   a. Creates a unique patient ID
+   b. Generates a prompt for creating a comprehensive medical history
+   c. Includes random examples from the loaded medical histories
+4. Creates batch prompts in JSONL format
+5. Saves the prompts in the specified output directory
+6. Updates the log of processed patients
+
+### Filepath Changes Needed
+- Update `INPUT_FILE`, `OUTPUT_DIR`, `DATA_DIR`, and `LOG_FILE`:
+  INPUT_FILE = r'C:\path\to\your\first_visits_output.csv'
+  OUTPUT_DIR = r'C:\path\to\your\output\directory'
+  DATA_DIR = r'C:\path\to\your\data\directory'
+  LOG_FILE = r'C:\path\to\your\processed_patients.json'
+
+### Output
+- JSONL files in the `OUTPUT_DIR`, named like `history_batch_prompts_YYYYMMDD_HHMMSS_fileX.jsonl`
+- Updated `processed_patients.json` log file
+
+### Additional Notes
+- The script uses a JSON schema to ensure consistent format for the generated histories
+- It includes logic to avoid reprocessing patients that have already been handled
+
+### Error Handling
+- Includes error handling for file operations and data processing
+- Uses a progress bar (tqdm) to show processing status
+
+## 2. medical_history_upload_batchjobs_mub5.py
+
+### Purpose
+This script uploads the generated medical history batch prompts to OpenAI and creates batch jobs for processing. It handles the API interaction and job creation process for the expanded medical histories.
+
+### How to Run
+python medical_history_upload_batchjobs_mub5.py
+
+### Prerequisites
+- Python 3.7+
+- Required libraries: os, json, time, datetime, openai, tkinter, tqdm
+
+### Main Parameters and Variables
+- `api_key`: Your OpenAI API key (replace with your actual key)
+- `INPUT_DIR`: Directory containing the batch prompt files for medical histories
+- `OUTPUT_DIR`: Directory to save the output files and logs
+
+### Detailed Workflow
+1. Initializes the OpenAI client with the provided API key
+2. Opens a file dialog for the user to select JSONL files to process
+3. For each selected file:
+   a. Counts the number of prompts in the file
+   b. Estimates completion time
+   c. Creates an output directory for the job
+   d. Uploads the file to OpenAI
+   e. Creates a batch job for the uploaded file
+   f. Logs the process details (job ID, status, estimated completion time, etc.)
+   g. Moves the input file to the output directory
+4. Handles errors and updates log files accordingly
+
+### Filepath Changes Needed
+- Update `INPUT_DIR` and `OUTPUT_DIR`:
+  INPUT_DIR = r'C:\path\to\your\medical_history_input\directory'
+  OUTPUT_DIR = r'C:\path\to\your\medical_history_output\directory'
+
+### Output
+- Log files for each processed batch in the output directory
+- Moved input files to individual subdirectories in the output directory
+
+### Additional Notes
+- Includes progress tracking using tqdm
+- Estimates completion time based on the number of prompts (2 minutes per prompt)
+
+### Error Handling
+- The script includes error handling for API interactions and file operations
+- Failed jobs are logged with error messages for troubleshooting
+
+## 3. medical_history_check_retrieve_results_mc5.py
+
+### Purpose
+This script checks the status of previously created medical history batch jobs and retrieves results for completed jobs. It provides monitoring and result collection functionality specifically for the expanded medical history data.
+
+### How to Run
+python medical_history_check_retrieve_results_mc5.py
+
+### Prerequisites
+- Python 3.7+
+- Required libraries: os, json, openai, glob, tqdm
+
+### Main Parameters and Variables
+- `api_key`: Your OpenAI API key (replace with your actual key)
+- `OUTPUT_DIR`: Directory containing the batch job logs and where results will be saved
+
+### Detailed Workflow
+1. Initializes the OpenAI client with the provided API key
+2. Scans the `OUTPUT_DIR` for all job log files
+3. For each job:
+   a. Checks the current status of the job with OpenAI
+   b. For completed jobs, downloads the results
+   c. Updates the job log with the latest status and result information
+4. Calculates and displays summary statistics:
+   - Number of jobs in each status (in progress, completed, failed, etc.)
+   - Token usage and estimated cost for completed jobs
+5. Provides a total summary of all jobs processed
+
+### Filepath Changes Needed
+- Update `OUTPUT_DIR`:
+  OUTPUT_DIR = r'C:\path\to\your\medical_history_output\directory'
+
+### Output
+- Updated log files for each job in their respective subdirectories
+- Downloaded result files for completed jobs
+- Console output with job status summary, token usage statistics, and cost estimates
+
+### Additional Notes
+- Uses tqdm for progress tracking during job processing
+- Calculates costs based on input and output tokens
+
+### Error Handling
+- Includes error handling for API interactions and file operations
+- Logs errors for individual jobs without stopping the entire process
+
+## 4. medical_history_autoformatter_af5.py
+
+### Purpose
+This script automatically formats the retrieved JSONL results from OpenAI batch jobs into CSV files. It processes the raw output of the expanded medical histories and structures it into a more usable format for analysis or further processing.
+
+### How to Run
+python medical_history_autoformatter_af5.py
+
+### Prerequisites
+- Python 3.7+
+- Required libraries: os, json, csv, re, jsonlines, datetime, argparse, shutil, json_repair
+
+### Main Parameters and Variables
+- `INPUT_DIR`: Directory containing the batch job results (JSONL files)
+- `OUTPUT_DIR`: Directory to save the formatted CSV files
+- `ERROR_DIR`: Directory to save files that encountered errors during processing
+- `ERROR_LOG_FILE`: File to log processing errors
+- `TRACKING_FILE`: JSON file to track processing progress
+- `MAX_PATIENTS`: Maximum number of patients to process (optional)
+
+### Detailed Workflow
+1. Scans the `INPUT_DIR` for subdirectories containing batch job results
+2. For each subdirectory:
+   a. Identifies the results JSONL files
+   b. Extracts patient information and medical history from the JSONL files
+   c. Parses the content to structure the data (e.g., separating visits, lab results, medical notes)
+   d. Converts the structured data to CSV format
+   e. Saves individual CSV files for each patient in `OUTPUT_DIR`
+3. Updates the tracking file to mark processed batches
+4. Handles any errors during processing and logs them
+5. Copies files with errors to the `ERROR_DIR` for later review
+
+### Filepath Changes Needed
+- Update `INPUT_DIR`, `OUTPUT_DIR`, and `ERROR_DIR`:
+  INPUT_DIR = r'C:\path\to\your\medical_history_input\directory'
+  OUTPUT_DIR = r'C:\path\to\your\medical_history_output\directory'
+  ERROR_DIR = r'C:\path\to\your\medical_history_error\directory'
+- Update `ERROR_LOG_FILE` and `TRACKING_FILE` paths if needed
+
+### Output
+- CSV files in the `OUTPUT_DIR`, named like `batch_name_patient_X.csv`
+- Error logs and problematic files in the `ERROR_DIR`
+- Updated tracking file (`format_tracking_log.json`) in the `OUTPUT_DIR`
+
+### Additional Notes
+- Includes command-line argument parsing for setting the maximum number of patients to process
+- Uses json_repair to handle potential JSON formatting issues
+
+### Error Handling
+- Comprehensive error handling with detailed logging
+- Problematic files are copied to a separate directory for manual review
+
+## 5. medical_history_appender_ma5.py
+
+### Purpose
+This script appends all the formatted CSV files of expanded medical histories into a single comprehensive dataset. It's the final step in the medical history data processing pipeline, consolidating all patient history data.
+
+### How to Run
+python medical_history_appender_ma5.py
+
+### Prerequisites
+- Python 3.7+
+- Required libraries: os, pandas, glob, json, datetime, tqdm
+
+### Main Parameters and Variables
+- `COMPLETE_DIR`: Directory containing the formatted CSV files of medical histories
+- `APPENDED_DIR`: Directory to save the appended dataset
+- `TRACKING_FILE`: JSON file to track which CSV files have been processed
+- `LOG_FILE`: File to log the appending process
+- `APPEND_TRACKING`: Boolean to enable/disable tracking of processed files
+
+### Detailed Workflow
+1. Scans the `COMPLETE_DIR` for all CSV files
+2. If tracking is enabled, loads the tracking file to identify which CSV files are new or unprocessed
+3. For each unprocessed CSV file:
+   a. Reads the content of the file using pandas
+   b. Appends the data to a master dataset
+4. Saves the appended dataset as a single CSV file with a timestamp
+5. Updates the tracking file to mark newly processed CSV files
+6. Logs the entire process, including any errors encountered
+
+### Filepath Changes Needed
+- Update `COMPLETE_DIR` and `APPENDED_DIR`:
+  COMPLETE_DIR = r'C:\path\to\your\medical_history_complete\directory'
+  APPENDED_DIR = r'C:\path\to\your\medical_history_appended\directory'
+- Update `TRACKING_FILE` and `LOG_FILE` paths if needed
+
+### Output
+- A single CSV file in the `APPENDED_DIR`, named like `appended_YYYYMMDD_HHMMSS.csv`
+- Updated tracking file (`append_tracking_log.json`) in the `APPENDED_DIR`
+- Detailed log file of the appending process
+
+### Additional Notes
+- Uses pandas for efficient CSV handling, suitable for large datasets
+- Includes a progress bar (tqdm) for visual feedback during processing
+- Can be configured to append all files or only new files since the last run
+
+### Error Handling
+- Comprehensive error handling with detailed logging
+- Continues processing other files even if one file causes an error
+- Provides summary statistics of processed and error files
+
+### Performance Considerations
+- Designed to handle large volumes of data efficiently
+- Consider running on a machine with sufficient RAM for very large datasets
