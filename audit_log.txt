@@ -1,0 +1,44 @@
+Anonymize Text: PatientID	Name	DateOfBirth	Age	AgeGroup	Gender	Address	InitialCondition	LongTermConditions	SecondaryConditions	Allergies	MedicationHistory	VisitDate	VisitType	BloodPressure	Pulse	SpO2	Temperature	Weight	Height	Symptoms	Diagnosis	MedicationPrescribed	LabResults	Procedures	MedicalNotes
+69c4b6a5JP	Juhani Paavola	05/06/1977	44.0109589	Adults	Male	Oravakatu 80, 11878 Jämijärvi	General malaise and fatigue	Hypertension	Anxiety Disorder, Hyperlipidemia	None	Lisinopril: Started in 2021 for hypertension, 10 mg daily; continued for 2 years.; Atorvastatin: Prescribed in 2022 to manage cholesterol levels, 20 mg daily; continues to present.; Sertraline: Started in 2023 to manage anxiety, initially 50 mg daily; dose increased to 100 mg after 3 months., 05/10/2021 - Lisinopril 10 mg daily	2021/5/10	Initial Consultation	145/90	80	98%	36.9	85	180	General malaise, fatigue, and occasional headaches	Suspected Hypertension	Lisinopril 10 mg daily	Lipid Panel: Total Cholesterol: 220 mg/dL; HDL: 40 mg/dL; LDL: 160 mg/dL; Triglycerides: 150 mg/dL	None	Mr. Paavola presents with symptoms of fatigue and headaches. Blood pressure indicates hypertension. Initiating Lisinopril for blood pressure control and lifestyle modifications discussed. Reinforced importance of monitoring blood pressure at home. Follow-up scheduled in 6 weeks.
+Anonymize Text: Patient Name: John Doe
+Date of Birth: 1990-01-01
+Email: john.doe@example.com
+Phone Number: +1234567890
+Medical Notes: John Doe is a 30-year-old male with a history of hypertension. He is currently taking Lisinopril 10mg daily. His latest blood pressure reading was 140/90 mmHg. He has no known allergies. Follow-up appointment scheduled for 2022-03-15.
+
+De-Anonymize Text: Patient Name: Allison Hill of Birth: <DATE_TIME>
+Email: <EMAIL_ADDRESS>
+Phone Number: +<IN_PAN>
+Medical Notes: Allison Hill is a <DATE_TIME> male with a history of hypertension. He is currently taking <IN_PAN> 10mg <DATE_TIME>. His latest blood pressure reading was 140/90 mmHg. He has no known allergies. Follow-up appointment scheduled for <DATE_TIME>.
+
+De-Anonymize Text: Patient Name: Allison Hill of Birth: <DATE_TIME>
+Email: <EMAIL_ADDRESS>
+Phone Number: +<IN_PAN>
+Medical Notes: Allison Hill is a <DATE_TIME> male with a history of hypertension. He is currently taking <IN_PAN> 10mg <DATE_TIME>. His latest blood pressure reading was 140/90 mmHg. He has no known allergies. Follow-up appointment scheduled for <DATE_TIME>.
+
+De-Anonymize Text: Patient Name: Allison Hill of Birth: <DATE_TIME>
+Email: <EMAIL_ADDRESS>
+Phone Number: +<IN_PAN>
+Medical Notes: Allison Hill is a <DATE_TIME> male with a history of hypertension. He is currently taking <IN_PAN> 10mg <DATE_TIME>. His latest blood pressure reading was 140/90 mmHg. He has no known allergies. Follow-up appointment scheduled for <DATE_TIME>.
+
+De-Anonymize Text: Patient Name: Allison Hill of Birth: <DATE_TIME>
+Email: <EMAIL_ADDRESS>
+Phone Number: +<IN_PAN>
+Medical Notes: Allison Hill is a <DATE_TIME> male with a history of hypertension. He is currently taking <IN_PAN> 10mg <DATE_TIME>. His latest blood pressure reading was 140/90 mmHg. He has no known allergies. Follow-up appointment scheduled for <DATE_TIME>.
+
+De-Anonymize Text: Patient Name: Allison Hill of Birth: <DATE_TIME>
+Email: <EMAIL_ADDRESS>
+Phone Number: +<IN_PAN>
+Medical Notes: Allison Hill is a <DATE_TIME> male with a history of hypertension. He is currently taking <IN_PAN> 10mg <DATE_TIME>. His latest blood pressure reading was 140/90 mmHg. He has no known allergies. Follow-up appointment scheduled for <DATE_TIME>.
+
+Anonymize Text: Patient Name: John Doe
+Date of Birth: 1990-01-01
+Email: john.doe@example.com
+Phone Number: +1234567890
+Medical Notes: John Doe is a 30-year-old male with a history of hypertension. He is currently taking Lisinopril 10mg daily. His latest blood pressure reading was 140/90 mmHg. He has no known allergies. Follow-up appointment scheduled for 2022-03-15.
+
+De-Anonymize Text: Patient Name: Allison Hill of Birth: <DATE_TIME>
+Email: <EMAIL_ADDRESS>
+Phone Number: +<IN_PAN>
+Medical Notes: Allison Hill is a <DATE_TIME> male with a history of hypertension. He is currently taking <IN_PAN> 10mg <DATE_TIME>. His latest blood pressure reading was 140/90 mmHg. He has no known allergies. Follow-up appointment scheduled for <DATE_TIME>.
+

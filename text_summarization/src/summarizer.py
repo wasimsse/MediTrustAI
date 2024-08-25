@@ -46,12 +46,16 @@ def summarize_text(text, detail_level="high", format_structure="bullet_points", 
         clean_summary = '. '.join(non_redundant_sentences)
 
         # Ensure important details are included
+        necessary_details = []
         if include_medications and "medications" not in clean_summary.lower():
-            clean_summary += "\n- Include medications details."
+            necessary_details.append("Include medications details")
         if include_allergies and "allergies" not in clean_summary.lower():
-            clean_summary += "\n- Include allergy details."
+            necessary_details.append("Include allergy details")
         if include_lab_results and "lab results" not in clean_summary.lower():
-            clean_summary += "\n- Include lab results details."
+            necessary_details.append("Include lab results details")
+
+        if necessary_details:
+            clean_summary += "\n- " + "\n- ".join(necessary_details)
 
         # Format the summary
         if format_structure == "bullet_points":
@@ -62,6 +66,15 @@ def summarize_text(text, detail_level="high", format_structure="bullet_points", 
         return f"Error during summarization: {str(e)}"
 
 def verify_summary_accuracy(original_text, summary_text):
+    if sbert_model is None:
+        return {
+            "accuracy": False,
+            "relevance": False,
+            "consistency": False,
+            "is_valid": False,
+            "error": "Semantic model not loaded properly"
+        }
+
     try:
         # Compute semantic similarity
         original_embedding = sbert_model.encode([original_text])

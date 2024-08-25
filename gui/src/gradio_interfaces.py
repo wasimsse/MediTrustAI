@@ -1,6 +1,7 @@
 import gradio as gr
 import sys
 import os
+import pandas as pd
 from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
 
@@ -84,49 +85,103 @@ def critical_analysis_interface(text):
         return f"Error during critical analysis: {str(e)}"
 
 def multi_agent_verification(summary, original_text):
-    # Load Sentence Transformer model for semantic similarity
-    sbert_model = SentenceTransformer('paraphrase-MiniLM-L6-v2')
-    
-    # Encode original text and summary
-    original_embedding = sbert_model.encode([original_text])
-    summary_embedding = sbert_model.encode([summary])
+    try:
+        # Load Sentence Transformer model for semantic similarity
+        sbert_model = SentenceTransformer('paraphrase-MiniLM-L6-v2')
+        
+        # Encode original text and summary
+        original_embedding = sbert_model.encode([original_text])
+        summary_embedding = sbert_model.encode([summary])
 
-    # Calculate cosine similarity
-    similarity = cosine_similarity(original_embedding, summary_embedding)[0][0]
+        # Calculate cosine similarity
+        similarity = cosine_similarity(original_embedding, summary_embedding)[0][0]
 
-    # Perform verification
-    accuracy = similarity > 0.7
-    relevance = 'metformin' in summary and 'lisinopril' in summary
-    consistency = not any(summary.count(x) > 1 for x in summary.split())
+        # Perform verification
+        accuracy = similarity > 0.7
+        relevance = 'medication' in summary.lower() or 'allergy' in summary.lower() or 'lab results' in summary.lower()
+        consistency = not any(summary.count(x) > 1 for x in summary.split())
 
-    verification_result = {
-        "accuracy": accuracy,
-        "relevance": relevance,
-        "consistency": consistency,
-        "is_valid": accuracy and relevance and consistency
-    }
+        verification_result = {
+            "accuracy": accuracy,
+            "relevance": relevance,
+            "consistency": consistency,
+            "is_valid": accuracy and relevance and consistency
+        }
 
-    return verification_result
+        return verification_result
+    except Exception as e:
+        return {
+            "accuracy": False,
+            "relevance": False,
+            "consistency": False,
+            "is_valid": False,
+            "error": str(e)
+        }
+
+def anonymize_file_interface(file):
+    try:
+        df = pd.read_csv(file.name)
+        anonymized_data = df.applymap(lambda x: anonymize_text(x)[0] if isinstance(x, str) else x)
+        anonymized_file = "anonymized_data.csv"
+        anonymized_data.to_csv(anonymized_file, index=False)
+        return anonymized_file
+    except Exception as e:
+        return f"Error during file anonymization: {str(e)}"
+
+def de_anonymize_file_interface(anonymized_file, entity_mapping_file):
+    try:
+        df_anonymized = pd.read_csv(anonymized_file.name)
+        entity_mapping = pd.read_json(entity_mapping_file.name).to_dict(orient='records')[0]
+        de_anonymized_data = df_anonymized.applymap(lambda x: de_anonymize_text(x, entity_mapping) if isinstance(x, str) else x)
+        de_anonymized_file = "de_anonymized_data.csv"
+        de_anonymized_data.to_csv(de_anonymized_file, index=False)
+        return de_anonymized_file
+    except Exception as e:
+        return f"Error during file de-anonymization: {str(e)}"
 
 anonymize_demo = gr.Interface(
     fn=anonymize_interface,
-    inputs=gr.Textbox(lines=10, placeholder="Enter text to anonymize..."),
+    inputs=gr.Textbox(lines=10, placeholder="Enter text to anonymize...", label="Text to Anonymize"),
     outputs="text",
-    title="Data Anonymization"
+    title="Data Anonymization",
+    description="Anonymize sensitive information in the text.",
+    css="gui/static/style.css"
 )
 
 de_anonymize_demo = gr.Interface(
     fn=de_anonymize_interface,
-    inputs=[gr.Textbox(lines=10, placeholder="Enter anonymized text..."), gr.Textbox(lines=10, placeholder="Enter original text for mapping...")],
+    inputs=[gr.Textbox(lines=10, placeholder="Enter anonymized text...", label="Anonymized Text"), gr.Textbox(lines=10, placeholder="Enter original text for mapping...", label="Original Text for Mapping")],
     outputs="text",
-    title="Data De-anonymization"
+    title="Data De-anonymization",
+    description="De-anonymize the text using the original mapping.",
+    css="gui/static/style.css"
+)
+
+anonymize_file_demo = gr.Interface(
+    fn=anonymize_file_interface,
+    inputs=gr.File(label="Upload CSV file to anonymize"),
+    outputs="file",
+    title="File Anonymization",
+    description="Anonymize sensitive information in the uploaded CSV file.",
+    css="gui/static/style.css"
+)
+
+de_anonymize_file_demo = gr.Interface(
+    fn=de_anonymize_file_interface,
+    inputs=[gr.File(label="Upload anonymized CSV file"), gr.File(label="Upload entity mapping JSON file")],
+    outputs="file",
+    title="File De-anonymization",
+    description="De-anonymize the uploaded CSV file using the entity mapping JSON file.",
+    css="gui/static/style.css"
 )
 
 translation_demo = gr.Interface(
     fn=translation_interface,
-    inputs=gr.Textbox(lines=10, placeholder="Enter text to translate..."),
+    inputs=gr.Textbox(lines=10, placeholder="Enter text to translate...", label="Text to Translate"),
     outputs="text",
-    title="Data Translation"
+    title="Data Translation",
+    description="Translate text from one language to another.",
+    css="gui/static/style.css"
 )
 
 summarization_demo = gr.Interface(
@@ -187,15 +242,19 @@ finnish_answer_demo = gr.Interface(
 
 multi_agent_demo = gr.Interface(
     fn=multi_agent_verification,
-    inputs=[gr.Textbox(lines=10, placeholder="Enter summarized text..."), gr.Textbox(lines=10, placeholder="Enter original text...")],
+    inputs=[gr.Textbox(lines=10, placeholder="Enter summarized text...", label="Summarized Text"), gr.Textbox(lines=10, placeholder="Enter original text...", label="Original Text")],
     outputs="json",
-    title="Multi-Agent Verification"
+    title="Multi-Agent Verification",
+    description="Verify the summarized text against the original text.",
+    css="gui/static/style.css"
 )
 
 demo = gr.TabbedInterface(
     [
         anonymize_demo,
         de_anonymize_demo,
+        anonymize_file_demo,
+        de_anonymize_file_demo,
         translation_demo,
         summarization_demo,
         prompt_engine_demo,
@@ -204,7 +263,8 @@ demo = gr.TabbedInterface(
         finnish_answer_demo,
         multi_agent_demo
     ],
-    ["Anonymize", "De-anonymize", "Translate", "Summarize", "Prompt Engineering", "Critical Analysis", "Fine-Tune LLM", "Answer in Finnish", "Multi-Agent Verification"]
+    ["Anonymize Text", "De-anonymize Text", "Anonymize File", "De-anonymize File", "Translate", "Summarize", "Prompt Engineering", "Critical Analysis", "Fine-Tune LLM", "Answer in Finnish", "Multi-Agent Verification"],
+    css="gui/static/style.css"
 )
 
 if __name__ == "__main__":

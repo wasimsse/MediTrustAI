@@ -1,0 +1,56 @@
+2024-08-08 11:23:17,345 - presidio-analyzer - INFO - nlp_engine not provided, creating default.
+2024-08-08 11:23:18,201 - presidio-analyzer - INFO - Created NLP engine: spacy. Loaded models: ['en']
+2024-08-08 11:23:18,202 - presidio-analyzer - INFO - registry not provided, creating default.
+2024-08-08 11:23:18,209 - presidio-analyzer - INFO - Loaded recognizer: CreditCardRecognizer
+2024-08-08 11:23:18,209 - presidio-analyzer - INFO - Loaded recognizer: CreditCardRecognizer
+2024-08-08 11:23:18,209 - presidio-analyzer - INFO - Loaded recognizer: CreditCardRecognizer
+2024-08-08 11:23:18,209 - presidio-analyzer - INFO - Loaded recognizer: CreditCardRecognizer
+2024-08-08 11:23:18,209 - presidio-analyzer - INFO - Loaded recognizer: UsBankRecognizer
+2024-08-08 11:23:18,209 - presidio-analyzer - INFO - Loaded recognizer: UsLicenseRecognizer
+2024-08-08 11:23:18,209 - presidio-analyzer - INFO - Loaded recognizer: UsItinRecognizer
+2024-08-08 11:23:18,209 - presidio-analyzer - INFO - Loaded recognizer: UsPassportRecognizer
+2024-08-08 11:23:18,209 - presidio-analyzer - INFO - Loaded recognizer: UsSsnRecognizer
+2024-08-08 11:23:18,209 - presidio-analyzer - INFO - Loaded recognizer: NhsRecognizer
+2024-08-08 11:23:18,209 - presidio-analyzer - INFO - Loaded recognizer: SgFinRecognizer
+2024-08-08 11:23:18,209 - presidio-analyzer - INFO - Loaded recognizer: AuAbnRecognizer
+2024-08-08 11:23:18,209 - presidio-analyzer - INFO - Loaded recognizer: AuAcnRecognizer
+2024-08-08 11:23:18,209 - presidio-analyzer - INFO - Loaded recognizer: AuTfnRecognizer
+2024-08-08 11:23:18,209 - presidio-analyzer - INFO - Loaded recognizer: AuMedicareRecognizer
+2024-08-08 11:23:18,209 - presidio-analyzer - INFO - Loaded recognizer: InPanRecognizer
+2024-08-08 11:23:18,209 - presidio-analyzer - INFO - Loaded recognizer: InAadhaarRecognizer
+2024-08-08 11:23:18,209 - presidio-analyzer - INFO - Loaded recognizer: InVehicleRegistrationRecognizer
+2024-08-08 11:23:18,209 - presidio-analyzer - INFO - Loaded recognizer: InPassportRecognizer
+2024-08-08 11:23:18,209 - presidio-analyzer - INFO - Loaded recognizer: EsNifRecognizer
+2024-08-08 11:23:18,209 - presidio-analyzer - INFO - Loaded recognizer: EsNieRecognizer
+2024-08-08 11:23:18,210 - presidio-analyzer - INFO - Loaded recognizer: ItDriverLicenseRecognizer
+2024-08-08 11:23:18,210 - presidio-analyzer - INFO - Loaded recognizer: ItFiscalCodeRecognizer
+2024-08-08 11:23:18,210 - presidio-analyzer - INFO - Loaded recognizer: ItVatCodeRecognizer
+2024-08-08 11:23:18,210 - presidio-analyzer - INFO - Loaded recognizer: ItIdentityCardRecognizer
+2024-08-08 11:23:18,210 - presidio-analyzer - INFO - Loaded recognizer: ItPassportRecognizer
+2024-08-08 11:23:18,210 - presidio-analyzer - INFO - Loaded recognizer: PlPeselRecognizer
+2024-08-08 11:23:18,210 - presidio-analyzer - INFO - Loaded recognizer: CryptoRecognizer
+2024-08-08 11:23:18,210 - presidio-analyzer - INFO - Loaded recognizer: DateRecognizer
+2024-08-08 11:23:18,210 - presidio-analyzer - INFO - Loaded recognizer: EmailRecognizer
+2024-08-08 11:23:18,210 - presidio-analyzer - INFO - Loaded recognizer: IbanRecognizer
+2024-08-08 11:23:18,210 - presidio-analyzer - INFO - Loaded recognizer: IpRecognizer
+2024-08-08 11:23:18,210 - presidio-analyzer - INFO - Loaded recognizer: MedicalLicenseRecognizer
+2024-08-08 11:23:18,210 - presidio-analyzer - INFO - Loaded recognizer: PhoneRecognizer
+2024-08-08 11:23:18,210 - presidio-analyzer - INFO - Loaded recognizer: UrlRecognizer
+2024-08-08 11:23:18,210 - presidio-analyzer - INFO - Loaded recognizer: InVoterRecognizer
+2024-08-08 11:23:18,210 - presidio-analyzer - WARNING - Recognizer not added to registry because language is not supported by registry - CreditCardRecognizer supported languages: es, registry supported languages: en
+2024-08-08 11:23:18,210 - presidio-analyzer - WARNING - Recognizer not added to registry because language is not supported by registry - CreditCardRecognizer supported languages: it, registry supported languages: en
+2024-08-08 11:23:18,210 - presidio-analyzer - WARNING - Recognizer not added to registry because language is not supported by registry - CreditCardRecognizer supported languages: pl, registry supported languages: en
+2024-08-08 11:23:18,210 - presidio-analyzer - WARNING - Recognizer not added to registry because language is not supported by registry - EsNifRecognizer supported languages: es, registry supported languages: en
+2024-08-08 11:23:18,210 - presidio-analyzer - WARNING - Recognizer not added to registry because language is not supported by registry - EsNieRecognizer supported languages: es, registry supported languages: en
+2024-08-08 11:23:18,210 - presidio-analyzer - WARNING - Recognizer not added to registry because language is not supported by registry - ItDriverLicenseRecognizer supported languages: it, registry supported languages: en
+2024-08-08 11:23:18,210 - presidio-analyzer - WARNING - Recognizer not added to registry because language is not supported by registry - ItFiscalCodeRecognizer supported languages: it, registry supported languages: en
+2024-08-08 11:23:18,210 - presidio-analyzer - WARNING - Recognizer not added to registry because language is not supported by registry - ItVatCodeRecognizer supported languages: it, registry supported languages: en
+2024-08-08 11:23:18,210 - presidio-analyzer - WARNING - Recognizer not added to registry because language is not supported by registry - ItIdentityCardRecognizer supported languages: it, registry supported languages: en
+2024-08-08 11:23:18,210 - presidio-analyzer - WARNING - Recognizer not added to registry because language is not supported by registry - ItPassportRecognizer supported languages: it, registry supported languages: en
+2024-08-08 11:23:18,210 - presidio-analyzer - WARNING - Recognizer not added to registry because language is not supported by registry - PlPeselRecognizer supported languages: pl, registry supported languages: en
+2024-08-08 11:23:18,210 - presidio-analyzer - INFO - Loaded recognizer: SpacyRecognizer
+2024-08-08 11:23:36,096 - __main__ - INFO - Starting de-anonymization process.
+2024-08-08 11:23:36,096 - __main__ - INFO - De-anonymization completed successfully.
+2024-08-08 11:23:36,096 - __main__ - INFO - De-anonymized text: John Doe was born on 1990-01-01. His email is john.doe@example.com and phone number is +1234567890.
+2024-08-08 11:23:36,096 - __main__ - INFO - De-anonymizing CSV file: anonymized_output.csv
+2024-08-08 11:23:36,096 - __main__ - ERROR - Error during CSV de-anonymization: [Errno 2] No such file or directory: 'mapping.json'

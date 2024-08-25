@@ -1,0 +1,32 @@
+{
+    "sqltools.connections": [
+        {
+            "pgOptions": {
+                "idleTimeoutMillis": 10000,
+                "connectionTimeoutMillis": 0
+            },
+            "previewLimit": 100,
+            "server": "localhost",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "Local PostgreSQL",
+            "database": "postgres",
+            "username": "postgres"
+        },
+        {
+            "pgOptions": {
+                "idleTimeoutMillis": 10000,
+                "connectionTimeoutMillis": 0,
+                "max": 10
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "Local PostgreSQL",
+            "database": "MediTrustedAI",
+            "username": "Admin",
+            "password": ""
+        }
+    ]
+}

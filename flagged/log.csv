@@ -21,3 +21,9 @@ Additional Considerations:
 Dependencies:
 Ensure that transformers and torch libraries are installed.
 Install sentencepiece as it is required by the MarianTokenizer.","Selitys: Tuonti: MarianMTModel ja MarianTokenizer muuntajista tuodaan käsittelemään käännöstä. Alustus: Malli ja sulautin alustetaan Helsinki-NLP/opus-mt-fi-mallilla, joka on suunniteltu englanniksi ja suomeksi. Translate_text Function: Tämä toiminto vie tekstijonon englanniksi ja palauttaa suomenkielisen käännetyn tekstijonon. Teksti kuitataan, käännetään mallin avulla ja puretaan sitten luettavaksi. Esimerkki: Käsikirjoitus sisältää esimerkillisen käyttöosion, joka osoittaa, miten näyteteksti käännetään, kun kirjoitus suoritetaan suoraan. Lisähuomautukset: Riippuvuus: Varmista, että muuntajat ja soihtukirjastot asennetaan. Asenna lauseosa MarianTokenizerin edellyttämällä tavalla.",,,2024-08-05 04:54:25.006775
+"Patient Name: Allison Hill of Birth: <DATE_TIME>
+Email: <EMAIL_ADDRESS>
+Phone Number: +<IN_PAN>
+Medical Notes: Allison Hill is a <DATE_TIME> male with a history of hypertension. He is currently taking <IN_PAN> 10mg <DATE_TIME>. His latest blood pressure reading was 140/90 mmHg. He has no known allergies. Follow-up appointment scheduled for <DATE_TIME>.
+",,,,,2024-08-05 23:26:12.889783
+flagged/Upload Excel file to anonymize/d83aa80ceede527e12f2/TestData.xlsx,flagged/output/7eeaa2afc77b07268e3f/anonymized_data.xlsx,,,2024-08-06 18:46:44.979183
